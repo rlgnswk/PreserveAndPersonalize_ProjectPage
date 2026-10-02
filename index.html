@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="ICLR 2026 project page for Preserve and Personalize: Personalized Text-to-Image Diffusion Models without Distributional Drift.">
@@ -22,83 +22,16 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
 </head>
 
 <body>
 
-<style>
-  /* Keep layout stable; don't globally center all containers (it breaks Bulma layouts) */
-
-  /* IMPORTANT: don't force inline-block for everything named .item
-     because Bulma-carousel uses .item too. We'll keep non-carousel items centered differently. */
-  .item video { width: 1024px; height: 1024px; max-width: 100%; }
-  .small-text { font-size: 20px; }
-
-  /* Make figures roughly the same width as the abstract column (4/5 of max-desktop) */
-  .figure-wrap {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .figure-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Title line breaks + keep "Text-to-Image" together */
-  .publication-title{
-    text-align: center;
-    margin: 0 auto;
-    line-height: 1.15;
-  }
-  .nowrap{ white-space: nowrap; }
-
-  /* Captions centered */
-  .figure-caption,
-  .caption,
-  .subtitle.has-text-centered{
-    text-align: center !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .content.has-text-justified .figure-caption,
-  .content.has-text-justified .caption,
-  .content.has-text-justified .subtitle.has-text-centered{
-    text-align: center !important;
-  }
-
-  /* ✅ FIX: center carousel items even when images are smaller than the max width */
-  .results-carousel .item {
-    width: 100% !important;         /* each slide takes full carousel width */
-    display: flex !important;       /* allow centering */
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  .results-carousel .item .figure-wrap {
-    margin: 0 auto !important;      /* ensure inner figure is centered */
-  }
-
-  /* For non-carousel single-image sections, keep image centered without using .item inline-block */
-  .single-figure {
-    display: flex;
-    justify-content: center;
-  }
-</style>
-
-<section class="hero">
+<section class="hero publication-header">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -110,24 +43,20 @@
           </h1>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block" style="margin-right: 1.25rem;">
+            <span class="author-block">
               <a href="https://scholar.google.com/citations?user=YOUR_GIHOON_SCHOLAR_ID" target="_blank">Gihoon Kim</a></span>
-            <span class="author-block" style="margin-right: 1.25rem;">
+            <span class="author-block">
               <a href="https://scholar.google.com/citations?user=YOUR_HYUNGJIN_SCHOLAR_ID" target="_blank">Hyungjin Park</a></span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=YOUR_TAESUP_SCHOLAR_ID" target="_blank">Taesup Kim</a></span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://iclr.cc/virtual/2026/poster/10011710" target="_blank">ICLR 2026</a><br>
-            </span>
-            <span class="eql-cntrb">
-              <small><br>Seoul National University</small>
-            </span>
+          <div class="publication-details">
+            <p class="publication-venue"><a href="https://iclr.cc/virtual/2026/poster/10011710" target="_blank">ICLR 2026</a></p>
+            <p>Seoul National University</p>
           </div>
 
-          <div class="column has-text-centered">
+          <div class="has-text-centered">
             <div class="publication-links">
 
               <span class="link-block">
@@ -163,44 +92,30 @@
   </div>
 </section>
 
-<!-- TL;DR -->
-<section class="section hero is-light">
+<section class="summary-section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <p>
-            <b>TL;DR:</b> We propose a simple yet effective objective grounded in Lipschitz regularization that guarantees preservation of the pretrained distribution, which prior approaches failed to ensure.
-          </p>
-        </div>
-      </div>
+    <div class="content"><p><b>TL;DR:</b> We propose a simple yet effective objective grounded in Lipschitz regularization that guarantees preservation of the pretrained distribution, which prior approaches failed to ensure.</p></div>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="container is-max-desktop">
+    <h2 class="title section-heading">Conceptual Visualizations</h2>
+    <div class="figure-stack">
+      <figure class="project-figure figure-wide">
+        <a class="figure-link" href="static/pnp_toy.png" target="_blank" rel="noopener" aria-label="Open full-size image: Preserving the pretrained distribution while adapting to a new concept.">
+          <img src="static/pnp_toy.png" alt="Preserving the pretrained distribution while adapting to a new concept." width="1756" height="454" loading="eager" decoding="async">
+        </a>
+        <figcaption>Preserving the pretrained distribution while adapting to a new concept.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- Conceptual Visualizations -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Conceptual Visualizations</h2>
-      <div class="single-figure">
-        <div class="figure-wrap">
-          <img src="static/pnp_toy.png" alt="pnp toy figure">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Abstract -->
-<section class="section hero is-light">
+<section class="project-section abstract-section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Personalizing text-to-image diffusion models involves integrating novel visual concepts
+    <h2 class="title section-heading">Abstract</h2>
+    <div class="content"><p>Personalizing text-to-image diffusion models involves integrating novel visual concepts
             from a small set of reference images while retaining the model’s original generative capabilities.
             However, this process often leads to overfitting, where the model ignores the user’s prompt and
             merely replicates the reference images. We attribute this issue to a fundamental misalignment
@@ -216,117 +131,108 @@
             architectures, we demonstrate that our approach achieves superior performance in both quantitative
             metrics and qualitative evaluations, consistently excelling in visual fidelity and prompt adherence.
             We further support these findings with comprehensive analyses, including ablation studies and
-            visualizations.
-          </p>
-        </div>
-      </div>
+            visualizations.</p></div>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="container is-max-desktop">
+    <h2 class="title section-heading">Visual Comparisons</h2>
+    <p class="section-note">Select any figure to view it at full resolution.</p>
+    <div class="figure-stack">
+      <figure class="project-figure figure-wide">
+        <a class="figure-link" href="static/pnp_fig4.png" target="_blank" rel="noopener" aria-label="Open full-size image: Qualitative comparison with existing personalization methods.">
+          <img src="static/pnp_fig4.png" alt="Qualitative comparison with existing personalization methods." width="1837" height="775" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Qualitative comparison with existing personalization methods.</figcaption>
+      </figure>
+      <figure class="project-figure figure-medium">
+        <a class="figure-link" href="static/pnp_fig3.png" target="_blank" rel="noopener" aria-label="Open full-size image: Personalization with and without our objective on SDXL and SD3.">
+          <img src="static/pnp_fig3.png" alt="Personalization with and without our objective on SDXL and SD3." width="1801" height="1381" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Personalization with and without our objective on SDXL and SD3.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- Visual Comparisons (carousel) -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Visual Comparisons</h2>
-      <div class="carousel results-carousel">
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_fig4.png" alt="visual comparison 1">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_fig3.png" alt="visual comparison 2">
-          </div>
-        </div>
-
-      </div>
+<section class="project-section">
+  <div class="container is-max-desktop">
+    <h2 class="title section-heading">Method</h2>
+    <div class="figure-stack">
+      <figure class="project-figure figure-table">
+        <a class="figure-link" href="static/pnp_algo.png" target="_blank" rel="noopener" aria-label="Open full-size image: Lipschitz-based regularization for personalization.">
+          <img src="static/pnp_algo.png" alt="Lipschitz-based regularization for personalization." width="1500" height="883" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Lipschitz-based regularization for personalization.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- Quantitative Results (carousel) -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
-      <div class="carousel results-carousel">
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_algo.png" alt="quantitative 1">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_table1.png" alt="quantitative 2">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_table2.png" alt="quantitative 3">
-          </div>
-        </div>
-
-      </div>
+<section class="project-section">
+  <div class="container is-max-desktop">
+    <h2 class="title section-heading">Quantitative Results</h2>
+    <div class="figure-stack">
+      <figure class="project-figure figure-table">
+        <a class="figure-link" href="static/pnp_table1.png" target="_blank" rel="noopener" aria-label="Open full-size image: Results across diffusion backbones and personalization methods.">
+          <img src="static/pnp_table1.png" alt="Results across diffusion backbones and personalization methods." width="1008" height="588" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Results across diffusion backbones and personalization methods.</figcaption>
+      </figure>
+      <figure class="project-figure figure-table">
+        <a class="figure-link" href="static/pnp_table2.png" target="_blank" rel="noopener" aria-label="Open full-size image: Comparison with few-shot and externally conditioned personalization methods.">
+          <img src="static/pnp_table2.png" alt="Comparison with few-shot and externally conditioned personalization methods." width="862" height="492" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Comparison with few-shot and externally conditioned personalization methods.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- Ablation Studies (carousel) -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
-      <div class="carousel results-carousel">
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_fig2.png" alt="ablation 1">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_fig5.png" alt="ablation 2">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="figure-wrap">
-            <img src="static/pnp_fig6.png" alt="ablation 3">
-          </div>
-        </div>
-
-      </div>
+<section class="project-section">
+  <div class="container is-max-desktop">
+    <h2 class="title section-heading">Ablation Studies</h2>
+    <div class="figure-stack">
+      <figure class="project-figure figure-compact">
+        <a class="figure-link" href="static/pnp_fig2.png" target="_blank" rel="noopener" aria-label="Open full-size image: Personalization time compared with prior preservation.">
+          <img src="static/pnp_fig2.png" alt="Personalization time compared with prior preservation." width="663" height="547" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Personalization time compared with prior preservation.</figcaption>
+      </figure>
+      <figure class="project-figure figure-medium">
+        <a class="figure-link" href="static/pnp_fig5.png" target="_blank" rel="noopener" aria-label="Open full-size image: Effect of regularization strength on personalized generation.">
+          <img src="static/pnp_fig5.png" alt="Effect of regularization strength on personalized generation." width="2158" height="1267" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Effect of regularization strength on personalized generation.</figcaption>
+      </figure>
+      <figure class="project-figure figure-wide">
+        <a class="figure-link" href="static/pnp_fig6.png" target="_blank" rel="noopener" aria-label="Open full-size image: Trade-offs between subject fidelity, text alignment, and parameter deviation.">
+          <img src="static/pnp_fig6.png" alt="Trade-offs between subject fidelity, text alignment, and parameter deviation." width="1680" height="409" loading="lazy" decoding="async">
+        </a>
+        <figcaption>Trade-offs between subject fidelity, text alignment, and parameter deviation.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- BibTeX -->
-<section class="section" id="BibTeX">
+<section class="project-section bibtex-section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre style="text-align: left;"><code>
-@inproceedings{kim2026preserveandpersonalize,
+    <h2 class="title section-heading">BibTeX</h2>
+    <pre><code>@inproceedings{kim2026preserveandpersonalize,
   title     = {Preserve and Personalize: Personalized Text-to-Image Diffusion Models without Distributional Drift},
   author    = {Gihoon Kim and Hyungjin Park and Taesup Kim},
   booktitle = {International Conference on Learning Representations (ICLR)},
   year      = {2026}
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-8">
+      <div class="column">
         <div class="content">
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
@@ -343,19 +249,6 @@
   </div>
 </footer>
 
-<script>
-  fetch('https://api.github.com/repos/rlgnswk/PnP_ProjectPage/tags')
-    .then(response => response.json())
-    .then(data => {
-      if (!data || data.length === 0) return;
-      var latestTag = data[0];
-      var el = document.getElementById('gitTagInfo');
-      if (el) el.innerHTML = `Latest Release: ${latestTag.name}`;
-    })
-    .catch(err => {
-      console.log('Failed to fetch tags:', err);
-    });
-</script>
 
 </body>
 </html>
